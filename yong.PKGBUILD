@@ -55,6 +55,7 @@ echo 'chang sp ok'
 buff=$(sed -n '/\[pinyin\]/,$ p' im/yong.ini)
 echo $buff | tr ' ' "\n"
 sed -i -e 's/default=0/default=6/' \
+       -e '/\[IM\]/a ABCD=1' \
        -e 's/3=erbi/3=pinyin/' \
        -e 's/6=pinyin/6=sp/' \
        -e 's/\[pinyin\]/\[sp\]/' \
